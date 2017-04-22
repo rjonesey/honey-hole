@@ -14,6 +14,7 @@ import LocationStore from './stores/LocationStore';
 import GoalStore from './stores/GoalStore';
 import EnsureLoggedInContainer from './components/EnsureLoggedInContainer';
 import EntryPage from './components/EntryPage';
+import HoneyHole from './components/HoneyHole';
 const locationStore = new LocationStore();
 const userStore = new UserStore();
 const goalStore = new GoalStore();
@@ -26,6 +27,7 @@ render((
         <Route path="/home" component={App}>
           <IndexRoute component={Home}/>
           <Route path="/form" component={Form}/>
+          <Route path="/honeyhole" component={HoneyHole}/>
           <Route path="/history" component={History}/>
         </Route>
       </Route>

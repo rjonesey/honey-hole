@@ -7,6 +7,7 @@ locationRoutes.post('/locations',function(req, res, next){
   let location = new Location();
   location.date = req.body.date;
   location.coordinates = req.body.coordinates;
+  location.weather = req.body.weather;
   location.owner = req.body.owner;
   location.save(function(err, location){
     if(err){
@@ -23,6 +24,24 @@ locationRoutes.get('/locations/:owner_id', function(req, res, next){
       next(err);
     } else {
       res.json(locations);
+    }
+  });
+});
+
+locationRoutes.put('/locations/:location_id', function(req, res, next){
+  Location.findById({_id: req.params.location_id}, function(err, location){
+    if(err){
+      next(err);
+    } else {
+      location.title = req.body.title;
+      location.notes = req.body.notes;
+      location.save(function(err, location){
+        if(err){
+          next(err);
+        } else {
+          res.json(location);
+        }
+      });
     }
   });
 });

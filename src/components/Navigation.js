@@ -17,7 +17,7 @@ class Navigation extends React.Component {
         <Navbar collapseOnSelect style={{backgroundColor:'white'}}>
           <Navbar.Header>
             <Navbar.Brand>
-              <Link to="/home" className="lifecoach-header" style={{color:'#F9A603'}}>Life Coach</Link>
+              <Link to="/home" className="lifecoach-header" style={{color:'#F9A603'}}>Honey Hole</Link>
             </Navbar.Brand>
             <Navbar.Toggle/>
           </Navbar.Header>

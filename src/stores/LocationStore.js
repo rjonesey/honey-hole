@@ -28,13 +28,19 @@ export default class LocationStore {
     this.showMap = this.showMap.bind(this);
     this.savePosition = this.savePosition.bind(this);
     this.getWeatherInfo = this.getWeatherInfo.bind(this);
-    this.saveNotes = this.saveNotes.bind(this);
+    this.saveFieldNotes = this.saveFieldNotes.bind(this);
   }
 
   savePosition(ownerId) {
     let coordinates = {
       latitude: this.center.lat,
       longitude: this.center.lng
+    };
+    let weather = {
+      temp: this.weather.temp,
+      conditions: this.weather.conditions,
+      windSpeed: this.weather.windSpeed,
+      windDir: this.weather.windDir
     };
     fetch('/location/locations', {
       method: 'POST',
@@ -45,6 +51,7 @@ export default class LocationStore {
       body: JSON.stringify({
         date: new Date,
         coordinates: coordinates,
+        weather: weather,
         owner: ownerId
       })
     })
@@ -58,7 +65,7 @@ export default class LocationStore {
        .then(data => this.weather = {conditions: data.weather[0].description, temp: data.main.temp, windSpeed: data.wind.speed, windDir: data.wind.deg });
   }
 
-  saveNotes(locationId){
+  saveFieldNotes(locationId, title, notes){
     fetch('/location/locations/' + locationId, {
       method: 'PUT',
       headers: {
@@ -66,9 +73,12 @@ export default class LocationStore {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        // status: this.columnLabels[index]
+        title: title,
+        notes: notes
       })
-    });
+    })
+    .then(result => result.json())
+    .then(result => this.location = result)
   }
 
   loadLastWheel(){
