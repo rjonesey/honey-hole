@@ -23,17 +23,7 @@ class Navigation extends React.Component {
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav>
-              <LinkContainer to={{pathname: '/form'}}>
-                <NavItem>
-                  <i style={{color:'#F70025'}} className="fa fa-pie-chart fa-lg" aria-hidden="true"></i>
-                </NavItem>
-              </LinkContainer>
-              <LinkContainer to={{pathname: '/lifegoals'}}>
-                <NavItem>
-                  <i style={{color:'#F25C00'}} className="fa fa-heart fa-lg" aria-hidden="true"></i>
-                </NavItem>
-              </LinkContainer>
-              <LinkContainer to={{pathname: '/history'}}>
+              <LinkContainer onClick={this.props.locationStore.honeyHoleClick} to={{pathname: '/library'}}>
                 <NavItem>
                   <i style={{color:'#FC354F'}} className="fa fa-database fa-lg" aria-hidden="true"></i>
                 </NavItem>
@@ -57,7 +47,8 @@ class Navigation extends React.Component {
 }
 Navigation.propTypes = {
   userStore: React.PropTypes.object,
-  logUserOut: React.PropTypes.func
+  logUserOut: React.PropTypes.func,
+  locationStore: React.PropTypes.object
 };
 
-export default inject("userStore")(observer(Navigation));
+export default inject('userStore', 'locationStore')(observer(Navigation));

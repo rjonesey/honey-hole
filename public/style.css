@@ -61,7 +61,7 @@ height: 100vh;
  margin-bottom: 0;
 }
 .navigationBar{
- position: fixed;
+ position: absolute;
  z-index: 1;
  width:100vw;
 }

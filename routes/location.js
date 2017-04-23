@@ -6,6 +6,7 @@ const locationRoutes = express.Router();
 locationRoutes.post('/locations',function(req, res, next){
   let location = new Location();
   location.date = req.body.date;
+  location.title = req.body.title;
   location.coordinates = req.body.coordinates;
   location.weather = req.body.weather;
   location.owner = req.body.owner;

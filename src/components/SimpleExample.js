@@ -1,6 +1,8 @@
 import React from 'react';
-import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
+import { Map, Marker, Popup, TileLayer, ScaleControl } from 'react-leaflet';
 import { inject, observer } from 'mobx-react';
+import { browserHistory } from 'react-router';
+import { Button } from 'react-bootstrap';
 
 class SimpleExample extends React.Component {
   constructor() {
@@ -9,7 +11,10 @@ class SimpleExample extends React.Component {
       lat: '',
       lng: '',
       zoom: 13,
+      currentLocation: false
     };
+    this.handleSavePosition = this.handleSavePosition.bind(this);
+
   }
 
   componentDidMount(){
@@ -25,7 +30,7 @@ class SimpleExample extends React.Component {
         let lon = position.coords.longitude;
 
         console.log(lat, lon);
-        this.setState({lat: lat, lng: lon});
+        this.setState({lat: lat, lng: lon, currentLocation: true});
         this.props.locationStore.center.lat = lat;
         this.props.locationStore.center.lng = lon;
         // this.props.locationStore.getWeatherInfo();
@@ -37,27 +42,48 @@ class SimpleExample extends React.Component {
 
   }
 
+  handleSavePosition() {
+    this.props.locationStore.savePosition(this.props.userStore.userId);
+    browserHistory.replace("/form");
+
+  }
+
+
 
   render() {
     const position = [this.state.lat, this.state.lng];
+    const marker = (this.state.currentLocation ?
+      (<Marker position={position}>
+        <Popup>
+          <span style={{textAlign:'center'}}>Current Location.</span>
+        </Popup>
+      </Marker>)
+      : null
+    );
+    const button = (
+      <Button bsStyle="danger" bsSize="large" block style={{marginTop: "20px"}} onClick={this.handleSavePosition}>
+      Save the Honey</Button>
+    );
     return (
-      <Map style={{width:'100%', height:'400px'}} center={position} zoom={this.state.zoom}>
-        <TileLayer
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
-        />
-        <Marker position={position}>
-          <Popup>
-            <span style={{textAlign:'center'}}>Current Location.</span>
-          </Popup>
-        </Marker>
-      </Map>
+      <div>
+        <Map style={{width:'100%', height:'400px'}} center={position} zoom={this.state.zoom}>
+          <ScaleControl position="bottomright" />
+          <TileLayer
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+          />
+          {marker}
+        </Map>
+        {this.state.currentLocation ? button : ''}
+      </div>
+
     );
   }
 }
 
 SimpleExample.propTypes = {
-  locationStore: React.PropTypes.object
+  locationStore: React.PropTypes.object,
+  userStore: React.PropTypes.object
 };
 
-export default inject('locationStore')(observer(SimpleExample));
+export default inject('locationStore', 'userStore')(observer(SimpleExample));

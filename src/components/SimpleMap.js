@@ -50,6 +50,18 @@ class SimpleMap extends React.Component {
   }
 
   render() {
+
+    let markers = this.props.locationStore.locations.map((location, index) =>
+      (
+        <Marker key={index} position={location.coordinates.latitude, location.coordinates.longitude}>
+          <Popup>
+            <span style={{textAlign:'center'}}>{location.title}</span>
+          </Popup>
+        </Marker>
+      ));
+
+
+
     return (
          <GoogleMap
           center={this.state.center}
