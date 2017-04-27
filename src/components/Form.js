@@ -45,23 +45,24 @@ class Form extends React.Component {
           <Col md={2}/>
           <Col md={8}>
             <form>
-              <h2>Field Notes </h2>
+              <h2 className="addfont">Field Notes </h2>
               <FormGroup controlId="formBasicText">
-                <ControlLabel>Title</ControlLabel>
+                <ControlLabel className="addfont">Title</ControlLabel>
                 <FormControl
                 type="text"
                 onChange={this.handleTitleChange}
                 value={this.state.title}
                 placeholder="Enter title"
+                className="addfont"
                 />
               </FormGroup>
 
               <FormGroup controlId="formControlsTextarea">
-                <ControlLabel>Notes</ControlLabel>
-                <FormControl componentClass="textarea" value={this.state.notes} onChange={this.handleNotesChange} placeholder="My notes.." />
+                <ControlLabel className="addfont">Notes</ControlLabel>
+                <FormControl className="addfont" componentClass="textarea" value={this.state.notes} onChange={this.handleNotesChange} placeholder="My notes.." />
               </FormGroup>
             </form>
-            <Button bsStyle="danger" bsSize="large" block style={{marginTop: "20px"}} onClick={this.handleSaveFieldNotes}>
+            <Button className="addfont" bsStyle="danger" bsSize="large" block style={{marginTop: "20px"}} onClick={this.handleSaveFieldNotes}>
               Save Your Notes</Button>
           </Col>
           <Col md={2}/>

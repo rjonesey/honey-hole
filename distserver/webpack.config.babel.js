@@ -15,16 +15,17 @@ var _path2 = _interopRequireDefault(_path);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  entry: [_path2.default.resolve(__dirname, 'src/index')],
+  entry: ['eventsource-polyfill', // necessary for hot reloading with IE
+  _path2.default.resolve(__dirname, 'src/index')],
   target: 'web',
   output: {
-    path: __dirname + '/dist', // Note: Physical files are only output by the production build task `npm run build`.
+    path: __dirname + '/www/js', // Note: Physical files are only output by the production build task `npm run build`.
     publicPath: '/',
     filename: 'bundle.js'
   },
   plugins: [new _webpack2.default.NoEmitOnErrorsPlugin()],
   module: {
-    rules: [{ test: /\.js$/, loader: 'babel-loader' }, { test: /(\.css)$/, use: [{ loader: 'style-loader' }, { loader: 'css-loader' }] }, { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader' }, { test: /\.(woff|woff2)$/, loader: 'url-loader',
+    rules: [{ test: /\.js$/, loader: 'babel-loader', exclude: [/node_modules/] }, { test: /(\.css)$/, use: [{ loader: 'style-loader' }, { loader: 'css-loader' }] }, { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader' }, { test: /\.(woff|woff2)$/, loader: 'url-loader',
       options: {
         prefix: 'font/',
         limit: '5000'

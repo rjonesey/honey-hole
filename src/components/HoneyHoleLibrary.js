@@ -44,7 +44,7 @@ class HoneyHoleLibrary extends React.Component{
     });
     let locations = this.props.locationStore.locations.map((location, index) =>
       (
-        <ListGroupItem key={index} onClick={this.handleHoneyDetails.bind(null, location)} href="">
+        <ListGroupItem className="addfont" key={index} onClick={this.handleHoneyDetails.bind(null, location)} href="">
         {dateFormat(location.date, "mm/dd/yy")} - <strong>{location.title}</strong>
         </ListGroupItem>
       ));
@@ -53,7 +53,7 @@ class HoneyHoleLibrary extends React.Component{
       (
         <Marker key={index} position={[location.coordinates.latitude, location.coordinates.longitude]}>
           <Popup>
-            <span style={{textAlign:'center'}}>{location.title}</span>
+            <span className="addfont" style={{textAlign:'center'}}>{location.title}</span>
           </Popup>
         </Marker>
       ));
@@ -73,7 +73,7 @@ class HoneyHoleLibrary extends React.Component{
                 {markers}
                 <Marker position={position}>
                   <Popup>
-                    <span style={{textAlign:'center'}}>Current Location.</span>
+                    <span className="addfont" style={{textAlign:'center'}}>Current Location.</span>
                   </Popup>
                 </Marker>
               </Map>

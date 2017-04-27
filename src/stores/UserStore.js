@@ -1,6 +1,9 @@
 import {extendObservable} from 'mobx';
 import {browserHistory} from 'react-router';
 import React from 'react';
+import config from '../config';
+const PROD = process.env.NODE_ENV === "production";
+const FORCE_AUTH = process.env.FORCE_AUTH || false; //Make this false for production
 
 export default class UserStore {
   constructor(){
@@ -20,10 +23,16 @@ export default class UserStore {
     this.setUser = this.setUser.bind(this);
     this.logUserOut = this.logUserOut.bind(this);
     this.displayWelcome = this.displayWelcome.bind(this);
+    this.logUser = this.logUser.bind(this);
+
   }
 
   authUser(user) {
-    fetch('/api/authenticate', {
+    if(FORCE_AUTH) {
+      this.logUser({token: "asdfkjhsadlfkjh", userId: "teasdkjdfskjh;", firstName: "testUser"});
+      return;
+    }
+    fetch(config.SITE + '/api/authenticate', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -35,17 +44,19 @@ export default class UserStore {
       })
     })
     .then(result => result.json())
-    .then(res => {
-      this.token = res.token;
-      this.userId = res.userId;
-      this.firstName = res.firstName;
-      if(res.token){
-        this.isLoggedIn = true;
-        browserHistory.replace("/home");
-      } else {
-        this.failedLogin = true;
-      }
-    });
+    .then(res => this.logUser(res));
+  }
+
+  logUser(res) {
+    this.token = res.token;
+    this.userId = res.userId;
+    this.firstName = res.firstName;
+    if(res.token){
+      this.isLoggedIn = true;
+      browserHistory.replace("/home");
+    } else {
+      this.failedLogin = true;
+    }
   }
 
   setUser(user) {

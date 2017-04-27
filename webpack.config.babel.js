@@ -3,11 +3,12 @@ import path from 'path';
 
 export default {
   entry: [
+    'eventsource-polyfill', // necessary for hot reloading with IE
     path.resolve(__dirname, 'src/index')
   ],
   target: 'web',
   output: {
-    path: __dirname + '/dist', // Note: Physical files are only output by the production build task `npm run build`.
+    path: __dirname + '/www/js', // Note: Physical files are only output by the production build task `npm run build`.
     publicPath: '/',
     filename: 'bundle.js'
   },
@@ -16,7 +17,7 @@ export default {
   ],
   module: {
     rules: [
-      {test: /\.js$/, loader: 'babel-loader'},
+      {test: /\.js$/, loader: 'babel-loader', exclude: [/node_modules/]},
       {test: /(\.css)$/, use:[{loader: 'style-loader'}, {loader: 'css-loader'}]},
       {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader'},
       {test: /\.(woff|woff2)$/, loader: 'url-loader',

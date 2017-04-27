@@ -2,6 +2,8 @@ import React from 'react';
 import {extendObservable} from 'mobx';
 import { Button, Glyphicon } from 'react-bootstrap';
 import { browserHistory } from 'react-router';
+import config from '../config';
+
 const dateFormat = require('dateformat');
 
 export default class LocationStore {
@@ -43,7 +45,7 @@ export default class LocationStore {
       windDir: this.weather.windDir
     };
     let title = this.defaultTitle;
-    fetch('/location/locations', {
+    fetch(config.SITE + '/location/locations', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -72,7 +74,7 @@ export default class LocationStore {
     if(title == ''){
       title = "New Honey Hole";
     }
-    fetch('/location/locations/' + locationId, {
+    fetch(config.SITE + '/location/locations/' + locationId, {
       method: 'PUT',
       headers: {
         'Accept': 'application/json',
@@ -89,7 +91,7 @@ export default class LocationStore {
   }
 
   loadLocationsFromServer(ownerId) {
-    fetch('/location/locations/' + ownerId)
+    fetch(config.SITE + '/location/locations/' + ownerId)
        .then(result => result.json())
        .then(locations => this.locations = locations);
   }

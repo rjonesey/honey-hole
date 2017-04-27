@@ -33,7 +33,7 @@ class SimpleExample extends React.Component {
         this.setState({lat: lat, lng: lon, currentLocation: true});
         this.props.locationStore.center.lat = lat;
         this.props.locationStore.center.lng = lon;
-        // this.props.locationStore.getWeatherInfo();
+        this.props.locationStore.getWeatherInfo();
       });
     } else {
       // Print out a message to the user.
@@ -55,13 +55,13 @@ class SimpleExample extends React.Component {
     const marker = (this.state.currentLocation ?
       (<Marker position={position}>
         <Popup>
-          <span style={{textAlign:'center'}}>Current Location.</span>
+          <span className="addfont" style={{textAlign:'center'}}>Current Location.</span>
         </Popup>
       </Marker>)
       : null
     );
     const button = (
-      <Button bsStyle="danger" bsSize="large" block style={{marginTop: "20px"}} onClick={this.handleSavePosition}>
+      <Button className="addfont" bsStyle="danger" bsSize="large" block style={{marginTop: "20px"}} onClick={this.handleSavePosition}>
       Save the Honey</Button>
     );
     return (

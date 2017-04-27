@@ -1,5 +1,6 @@
 import React from 'react';
 import { observer, inject } from 'mobx-react';
+import config from '../config';
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -37,7 +38,7 @@ class SignUp extends React.Component {
     this.props.userStore.userCreated = false;
     this.props.userStore.failedEmailPassword = false;
     e.preventDefault();
-    fetch('/newuser', {
+    fetch(config.SITE + '/newuser', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -115,7 +116,8 @@ class SignUp extends React.Component {
             <button
               onClick={this.addUserToDatabase}
               type="submit"
-              className="submitForm">
+              className="submitForm"
+              style={{textAlign: 'center'}}>
               <strong>
                 Sign Up
               </strong>

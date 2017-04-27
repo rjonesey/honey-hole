@@ -17,7 +17,7 @@ class Navigation extends React.Component {
         <Navbar collapseOnSelect style={{backgroundColor:'white'}}>
           <Navbar.Header>
             <Navbar.Brand>
-              <Link to="/home" className="lifecoach-header" style={{color:'#F9A603'}}>Honey Hole</Link>
+              <Link to="/home" className="lifecoach-header" style={{color:'#90afc5'}}>Honey Hole</Link>
             </Navbar.Brand>
             <Navbar.Toggle/>
           </Navbar.Header>
@@ -25,12 +25,12 @@ class Navigation extends React.Component {
             <Nav>
               <LinkContainer onClick={this.props.locationStore.honeyHoleClick} to={{pathname: '/library'}}>
                 <NavItem>
-                  <i style={{color:'#FC354F'}} className="fa fa-database fa-lg" aria-hidden="true"></i>
+                  <i style={{color:'#d9534f'}} className="fa fa-map-marker fa-lg" aria-hidden="true"></i>
                 </NavItem>
               </LinkContainer>
             </Nav>
             <Nav pullRight className="nav-bar-right">
-              <Navbar.Text style={{color: "black"}}>
+              <Navbar.Text className="addfont" style={{color: "black"}}>
                 <i className="fa fa-user fa-lg" aria-hidden="true"></i> Welcome, {this.props.userStore.firstName}!
               </Navbar.Text>
               <LinkContainer onClick={this.props.userStore.logUserOut} to={{pathname: '/'}}>

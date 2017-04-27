@@ -12,7 +12,8 @@
     "test": "npm run lint && npm run testonly",
     "testonly": "mocha --reporter progress tools/testSetup.js \"src/**/*.test.js\" \"models/*.test.js\" ",
     "testonly:watch": "npm run test -- --watch",
-    "build": "npm run clean && npm run build:webpack && npm run build:server",
+    "build": "npm run clean && npm run build:webpack && npm run build:server && npm run copy2dist",
+    "copy2dist": "copyfiles -u 2 www/js/* dist",
     "clean": "rimraf dist distServer",
     "build:webpack": "NODE_ENV='production' webpack --config webpack.config.babel.js",
     "build:server": "babel tools -d distserver/tools --presets es2015 && babel models -d distserver/models && babel routes -d distserver/routes --presets es2015 && babel webpack.config.babel.js webpack.config.dev.js -d distserver"
@@ -20,6 +21,7 @@
   "author": "team Ricky, Alex, Neal, Vince",
   "license": "MIT",
   "dependencies": {
+    "babel-plugin-dev-expression": "^0.2.1",
     "babel-polyfill": "^6.23.0",
     "body-parser": "^1.17.1",
     "bootstrap": "^3.3.7",
@@ -66,6 +68,7 @@
     "chai": "^3.5.0",
     "cheerio": "^0.22.0",
     "compression": "^1.6.2",
+    "copyfiles": "^1.2.0",
     "cross-env": "^3.2.4",
     "css-loader": "^0.27.3",
     "enzyme": "^2.7.1",

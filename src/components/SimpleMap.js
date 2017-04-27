@@ -40,7 +40,7 @@ class SimpleMap extends React.Component {
         this.setState({center: {lat: lat, lng: lon}});
         this.props.locationStore.center.lat = lat;
         this.props.locationStore.center.lng = lon;
-        // this.props.locationStore.getWeatherInfo();
+        this.props.locationStore.getWeatherInfo();
       });
     } else {
       // Print out a message to the user.
@@ -55,7 +55,7 @@ class SimpleMap extends React.Component {
       (
         <Marker key={index} position={location.coordinates.latitude, location.coordinates.longitude}>
           <Popup>
-            <span style={{textAlign:'center'}}>{location.title}</span>
+            <span className="addfont" style={{textAlign:'center'}}>{location.title}</span>
           </Popup>
         </Marker>
       ));
