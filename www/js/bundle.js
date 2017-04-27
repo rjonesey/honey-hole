@@ -44210,7 +44210,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var PROD = process.env.NODE_ENV === "production";
-var FORCE_AUTH = process.env.FORCE_AUTH || false; //Make this false for production
+var FORCE_AUTH = process.env.FORCE_AUTH || true; //Make this false for production
 
 var UserStore = function () {
   function UserStore() {

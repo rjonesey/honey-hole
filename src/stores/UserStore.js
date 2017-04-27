@@ -3,7 +3,7 @@ import {browserHistory} from 'react-router';
 import React from 'react';
 import config from '../config';
 const PROD = process.env.NODE_ENV === "production";
-const FORCE_AUTH = process.env.FORCE_AUTH || false; //Make this false for production
+const FORCE_AUTH = process.env.FORCE_AUTH || true; //Make this false for production
 
 export default class UserStore {
   constructor(){
