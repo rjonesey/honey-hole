@@ -27238,17 +27238,16 @@ exports.default = (0, _mobxReact.inject)('locationStore')((0, _mobxReact.observe
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
+
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var config = {
-  SITE: process.env.HONEY_HOLE_SITE || "https://honeyhole.herokuapp.com/"
+  SITE: "https://honeyhole.herokuapp.com"
 };
 
 exports.default = config;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 129 */
@@ -44210,7 +44209,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var PROD = process.env.NODE_ENV === "production";
-var FORCE_AUTH = process.env.FORCE_AUTH || true; //Make this false for production
+var FORCE_AUTH = process.env.FORCE_AUTH || false;
 
 var UserStore = function () {
   function UserStore() {

@@ -1,5 +1,7 @@
 const config = {
-  SITE: process.env.HONEY_HOLE_SITE || "https://honeyhole.herokuapp.com/"
+  // SITE: "https://honeyhole.herokuapp.com"
+  SITE: ""
+
 };
 
 export default config;
