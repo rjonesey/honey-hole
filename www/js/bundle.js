@@ -27244,7 +27244,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var config = {
-  SITE: process.env.HONEY_HOLE_SITE || "http://192.168.1.88:3000"
+  SITE: process.env.HONEY_HOLE_SITE || "https://honeyhole.herokuapp.com/"
 };
 
 exports.default = config;
@@ -32316,36 +32316,40 @@ var Navigation = function (_React$Component) {
             _react2.default.createElement(_reactBootstrap.Navbar.Toggle, null)
           ),
           _react2.default.createElement(
-            _reactBootstrap.Nav,
+            _reactBootstrap.Navbar.Collapse,
             null,
             _react2.default.createElement(
-              _reactRouterBootstrap.LinkContainer,
-              { onClick: this.props.locationStore.honeyHoleClick, to: { pathname: '/library' } },
+              _reactBootstrap.Nav,
+              null,
               _react2.default.createElement(
-                _reactBootstrap.NavItem,
-                null,
-                _react2.default.createElement('i', { style: { color: '#d9534f' }, className: 'fa fa-map-marker fa-lg', 'aria-hidden': 'true' })
+                _reactRouterBootstrap.LinkContainer,
+                { onClick: this.props.locationStore.honeyHoleClick, to: { pathname: '/library' } },
+                _react2.default.createElement(
+                  _reactBootstrap.NavItem,
+                  null,
+                  _react2.default.createElement('i', { style: { color: '#d9534f' }, className: 'fa fa-map-marker fa-lg', 'aria-hidden': 'true' })
+                )
               )
-            )
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Nav,
-            { pullRight: true, className: 'nav-bar-right' },
-            _react2.default.createElement(
-              _reactBootstrap.Navbar.Text,
-              { className: 'addfont', style: { color: "black" } },
-              _react2.default.createElement('i', { className: 'fa fa-user fa-lg', 'aria-hidden': 'true' }),
-              ' Welcome, ',
-              this.props.userStore.firstName,
-              '!'
             ),
             _react2.default.createElement(
-              _reactRouterBootstrap.LinkContainer,
-              { onClick: this.props.userStore.logUserOut, to: { pathname: '/' } },
+              _reactBootstrap.Nav,
+              { pullRight: true, className: 'nav-bar-right' },
               _react2.default.createElement(
-                _reactBootstrap.NavItem,
-                null,
-                _react2.default.createElement('i', { style: { color: "black" }, className: 'fa fa-sign-out fa-lg', 'aria-hidden': 'true' })
+                _reactBootstrap.Navbar.Text,
+                { className: 'addfont', style: { color: "black" } },
+                _react2.default.createElement('i', { className: 'fa fa-user fa-lg', 'aria-hidden': 'true' }),
+                ' Welcome, ',
+                this.props.userStore.firstName,
+                '!'
+              ),
+              _react2.default.createElement(
+                _reactRouterBootstrap.LinkContainer,
+                { onClick: this.props.userStore.logUserOut, to: { pathname: '/' } },
+                _react2.default.createElement(
+                  _reactBootstrap.NavItem,
+                  null,
+                  _react2.default.createElement('i', { style: { color: "black" }, className: 'fa fa-sign-out fa-lg', 'aria-hidden': 'true' })
+                )
               )
             )
           )
