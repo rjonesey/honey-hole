@@ -27245,6 +27245,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 var config = {
   SITE: "https://honeyhole.herokuapp.com"
+  // SITE: ""
+
 };
 
 exports.default = config;
@@ -32319,7 +32321,7 @@ var Navigation = function (_React$Component) {
             null,
             _react2.default.createElement(
               _reactBootstrap.Nav,
-              null,
+              { pullRight: true, className: 'nav-bar-right' },
               _react2.default.createElement(
                 _reactRouterBootstrap.LinkContainer,
                 { onClick: this.props.locationStore.honeyHoleClick, to: { pathname: '/library' } },
@@ -32327,27 +32329,6 @@ var Navigation = function (_React$Component) {
                   _reactBootstrap.NavItem,
                   null,
                   _react2.default.createElement('i', { style: { color: '#d9534f' }, className: 'fa fa-map-marker fa-lg', 'aria-hidden': 'true' })
-                )
-              )
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Nav,
-              { pullRight: true, className: 'nav-bar-right' },
-              _react2.default.createElement(
-                _reactBootstrap.Navbar.Text,
-                { className: 'addfont', style: { color: "black" } },
-                _react2.default.createElement('i', { className: 'fa fa-user fa-lg', 'aria-hidden': 'true' }),
-                ' Welcome, ',
-                this.props.userStore.firstName,
-                '!'
-              ),
-              _react2.default.createElement(
-                _reactRouterBootstrap.LinkContainer,
-                { onClick: this.props.userStore.logUserOut, to: { pathname: '/' } },
-                _react2.default.createElement(
-                  _reactBootstrap.NavItem,
-                  null,
-                  _react2.default.createElement('i', { style: { color: "black" }, className: 'fa fa-sign-out fa-lg', 'aria-hidden': 'true' })
                 )
               )
             )
@@ -43593,7 +43574,7 @@ var SimpleExample = function (_React$Component) {
       );
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'pushback' },
         _react2.default.createElement(
           _reactLeaflet.Map,
           { style: { width: '100%', height: '400px' }, center: position, zoom: this.state.zoom },

@@ -63,7 +63,7 @@ class SignUp extends React.Component {
   render() {
     let logInMessage = (
       <h3 className="signup-message2">
-      Welcome to Life Coach!  Go ahead and log in!
+      Welcome to Honey Hole!  Go ahead and log in!
       </h3>
     );
 

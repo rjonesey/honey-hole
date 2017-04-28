@@ -66,13 +66,14 @@ height: 100vh;
  margin-bottom: 0;
 }
 .navigationBar{
- position: absolute;
- z-index: 1;
+ position: relative;
+ z-index: 2;
  width:100vw;
+ display: flex;
+ justify-content: space-around;
 }
 
 .submitForm {
- border: 1px solid black;
  border-radius: 5px;
  text-align: center;
  width:80px;
@@ -127,7 +128,6 @@ height: 100vh;
  letter-spacing: 5px;
  text-align: center;
  color:black;
- border:1px solid black;
  padding:20px;
  border-radius: 15px;
  background-color: #ededed;
@@ -160,7 +160,7 @@ height: 100vh;
 .welcome-header{
 font-size:7vw;
 color:black;
-margin-top: 10vh;
+margin-top: 4vh;
 margin-bottom: 2vh;
 text-align: center;
 font-family: 'Dosis', sans-serif;
@@ -307,4 +307,8 @@ font-family: 'Dosis', sans-serif;
 
 .addfont{
   font-family: 'Dosis', sans-serif;
+}
+
+.pushback{
+  z-index: -2;
 }

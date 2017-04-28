@@ -37,10 +37,6 @@ height: 100vh;
  margin-top: 2vh;
 
 }
-.lifecoach-header{
- font-family: 'Dosis', sans-serif;
- font-size: 5vh;
-}
 
 .bodyText{
  font-family: 'Dosis', sans-serif;
@@ -65,14 +61,8 @@ height: 100vh;
  color: black;
  margin-bottom: 0;
 }
-.navigationBar{
- position: absolute;
- z-index: 1;
- width:100vw;
-}
 
 .submitForm {
- border: 1px solid black;
  border-radius: 5px;
  text-align: center;
  width:80px;
@@ -127,7 +117,6 @@ height: 100vh;
  letter-spacing: 5px;
  text-align: center;
  color:black;
- border:1px solid black;
  padding:20px;
  border-radius: 15px;
  background-color: #ededed;
@@ -160,7 +149,7 @@ height: 100vh;
 .welcome-header{
 font-size:7vw;
 color:black;
-margin-top: 10vh;
+margin-top: 4vh;
 margin-bottom: 2vh;
 text-align: center;
 font-family: 'Dosis', sans-serif;
@@ -305,6 +294,49 @@ font-family: 'Dosis', sans-serif;
   color: white;
 }
 
-.addfont{
+.addfont {
   font-family: 'Dosis', sans-serif;
+}
+
+.pushback {
+  z-index: -2;
+}
+
+.navigationBar {
+ width:100vw;
+ text-decoration: none;
+}
+
+.lifecoach-header {
+ font-family: 'Dosis', sans-serif;
+ font-size: 27px;
+ margin-left: 5vw;
+ margin-right: auto;
+ text-decoration: none;
+}
+
+.locationLibrary {
+float:right;
+margin-right: 5vw;
+color: #d9534f;
+margin-top: 5px;
+text-decoration: none;
+}
+
+.locationLibrary:hover {
+float:right;
+margin-right: 5vw;
+color: #d9534f;
+margin-top: 5px;
+text-decoration: none;
+}
+
+.activeLibrary {
+  text-decoration: none;
+}
+
+.deleteButton {
+  position: absolute;
+  width: 33%;
+  margin-left: 33%;
 }

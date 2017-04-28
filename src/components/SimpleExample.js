@@ -65,7 +65,7 @@ class SimpleExample extends React.Component {
       Save the Honey</Button>
     );
     return (
-      <div>
+      <div className="pushback">
         <Map style={{width:'100%', height:'400px'}} center={position} zoom={this.state.zoom}>
           <ScaleControl position="bottomright" />
           <TileLayer

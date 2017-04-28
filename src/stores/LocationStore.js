@@ -64,6 +64,17 @@ export default class LocationStore {
     .then(result => this.locations.push(result));
   }
 
+  deletePosition(honey) {
+    let allHoney = this.locations.slice();
+    allHoney=allHoney.filter(i => honey._id !== i._id);
+    this.locations = allHoney;
+    fetch(`/locations/${honey._id}`, {
+      method: 'DELETE'
+    });
+  }
+
+
+
   getWeatherInfo() {
     fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${this.center.lat}&lon=${this.center.lng}&APPID=72c2e10afa58ce6e31b103d41b7125b8`)
        .then(result => result.json())
@@ -100,20 +111,4 @@ export default class LocationStore {
     this.honeyHoleClicked = false;
   }
 
-  loadLastWheel(){
-    if(this.wheels.length > 0){
-      for(let i = 0; i < this.segs.length; i++) {
-        this.segs[i].score = this.wheels[this.wheels.length - 1].segs[i].score;
-      }
-      this.newWheel = false;
-    }
-  }
-
-  resetWheel(){
-    for(let i = 0; i < this.segs.length; i++) {
-      this.segs[i].score = 0;
-    }
-    this.newWheel = true;
-    this.loadCanvas();
-  }
 }
