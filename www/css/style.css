@@ -37,10 +37,6 @@ height: 100vh;
  margin-top: 2vh;
 
 }
-.lifecoach-header{
- font-family: 'Dosis', sans-serif;
- font-size: 5vh;
-}
 
 .bodyText{
  font-family: 'Dosis', sans-serif;
@@ -64,13 +60,6 @@ height: 100vh;
  font-size: 7vh;
  color: black;
  margin-bottom: 0;
-}
-.navigationBar{
- position: relative;
- z-index: 2;
- width:100vw;
- display: flex;
- justify-content: space-around;
 }
 
 .submitForm {
@@ -305,10 +294,49 @@ font-family: 'Dosis', sans-serif;
   color: white;
 }
 
-.addfont{
+.addfont {
   font-family: 'Dosis', sans-serif;
 }
 
-.pushback{
+.pushback {
   z-index: -2;
+}
+
+.navigationBar {
+ width:100vw;
+ text-decoration: none;
+}
+
+.lifecoach-header {
+ font-family: 'Dosis', sans-serif;
+ font-size: 27px;
+ margin-left: 5vw;
+ margin-right: auto;
+ text-decoration: none;
+}
+
+.locationLibrary {
+float:right;
+margin-right: 5vw;
+color: #d9534f;
+margin-top: 5px;
+text-decoration: none;
+}
+
+.locationLibrary:hover {
+float:right;
+margin-right: 5vw;
+color: #d9534f;
+margin-top: 5px;
+text-decoration: none;
+}
+
+.activeLibrary {
+  text-decoration: none;
+}
+
+.deleteButton {
+  position: absolute;
+  width: 33%;
+  margin-left: 33%;
 }
