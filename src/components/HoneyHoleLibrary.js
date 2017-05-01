@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Button, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { inject, observer } from 'mobx-react';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Map, Marker, Popup, TileLayer, ScaleControl } from 'react-leaflet';
@@ -16,6 +16,7 @@ class HoneyHoleLibrary extends React.Component{
     };
     this.handleHoneyDetails = this.handleHoneyDetails.bind(this);
     this.resetLibrary = this.resetLibrary.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount(){
@@ -31,6 +32,15 @@ class HoneyHoleLibrary extends React.Component{
     this.setState({location: location});
   }
 
+  handleDelete(location, e){
+    if (confirm('Are you sure you want to delete the honey?')) {
+      this.props.locationStore.deleteLocation(location._id);
+    } else {
+      return null;
+    }    
+  }
+
+
   render(){
     const position = (this.props.locationStore.center.lat == '' && this.props.locationStore.locations.length > 0 ?
     [this.props.locationStore.locations[0].coordinates.latitude, this.props.locationStore.locations[0].coordinates.longitude] :
@@ -44,9 +54,12 @@ class HoneyHoleLibrary extends React.Component{
     });
     let locations = this.props.locationStore.locations.map((location, index) =>
       (
-        <ListGroupItem className="addfont" key={index} onClick={this.handleHoneyDetails.bind(null, location)} href="">
-        {dateFormat(location.date, "mm/dd/yy")} - <strong>{location.title}</strong>
-        </ListGroupItem>
+        <div key={index} style={{display:'flex', flexDirection:'row'}}>
+          <ListGroupItem  onClick={this.handleHoneyDetails.bind(null, location)} href="">
+          {dateFormat(location.date, "mm/dd/yy")} - <strong>{location.title}</strong>
+          </ListGroupItem>
+          <Button bsStyle="danger" onClick={this.handleDelete.bind(null, location)} style={{float:'right'}}>Delete</Button>
+        </div>
       ));
 
     let markers = this.props.locationStore.locations.map((location, index) =>

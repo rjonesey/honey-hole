@@ -4,6 +4,7 @@ import { FormControl, ControlLabel, FormGroup, Button, Col } from 'react-bootstr
 import { Map, Marker, Popup, TileLayer, ScaleControl } from 'react-leaflet';
 import dateFormat from 'dateformat';
 import { browserHistory } from 'react-router';
+import handleDelete from './HoneyHoleLibrary';
 
 class HoneyHole extends React.Component{
   constructor(){
@@ -55,7 +56,6 @@ class HoneyHole extends React.Component{
               <h3 className="addfont">Temperature: {Math.floor((this.props.location.weather.temp)* (9/5) - 459.67)} degrees</h3>
               <h3 className="addfont">Wind: {Math.floor((this.props.location.weather.windSpeed) * 2.2369)} mph, {this.props.location.weather.windDir} degrees</h3>
               <h3 className="addfont">Notes: {this.props.location.notes} </h3>
-              <Button onClick={this.props.locationStore} className="btn btn-danger deleteButton">Delete</Button>
             </Col>
           <Col/>
         </div>
@@ -67,7 +67,7 @@ class HoneyHole extends React.Component{
 HoneyHole.propTypes = {
   locationStore: React.PropTypes.object,
   location: React.PropTypes.object,
-  backButton: React.PropTypes.boolean
+  backButton: React.PropTypes.boolean,
 };
 
 export default inject('locationStore')(observer(HoneyHole));

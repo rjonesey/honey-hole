@@ -64,11 +64,11 @@ export default class LocationStore {
     .then(result => this.locations.push(result));
   }
 
-  deletePosition(honey) {
-    let allHoney = this.locations.slice();
-    allHoney=allHoney.filter(i => honey._id !== i._id);
-    this.locations = allHoney;
-    fetch(`/locations/${honey._id}`, {
+  deleteLocation(locationId) {
+    console.log(locationId);
+    let newList = this.locations.filter(l => l._id !== locationId);
+    this.locations = newList;
+    fetch('/location/locations/' + locationId, {
       method: 'DELETE'
     });
   }
