@@ -27248,8 +27248,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var config = {
-  // SITE: "https://honeyhole.herokuapp.com"
-  SITE: ""
+  SITE: "https://honeyhole.herokuapp.com"
+  // SITE: ""
 
 };
 
@@ -32205,6 +32205,7 @@ var HoneyHoleLibrary = function (_React$Component) {
       var position = this.props.locationStore.center.lat == '' && this.props.locationStore.locations.length > 0 ? [this.props.locationStore.locations[0].coordinates.latitude, this.props.locationStore.locations[0].coordinates.longitude] : [this.props.locationStore.center.lat, this.props.locationStore.center.lng];
       var bounds = (0, _leaflet.latLngBounds)([position[0] - 0.01, position[1] - 0.01], [position[0] + 0.01, position[1] + 0.01]);
       var latsLongs = [];
+      console.log("honeyholelibrary render", this.props.locationStore.locations.length);
       this.props.locationStore.locations.forEach(function (location) {
         return latsLongs.push({ latLng: [location.coordinates.latitude, location.coordinates.longitude] });
       });
@@ -44072,12 +44073,12 @@ var LocationStore = function () {
   }, {
     key: 'deleteLocation',
     value: function deleteLocation(locationId) {
-      console.log(locationId);
       var newList = this.locations.filter(function (l) {
         return l._id !== locationId;
       });
       this.locations = newList;
-      fetch('/location/locations/' + locationId, {
+      console.log("deleteLocation", this.locations.length);
+      fetch(_config2.default.SITE + '/location/locations/' + locationId, {
         method: 'DELETE'
       });
     }
@@ -44126,7 +44127,8 @@ var LocationStore = function () {
       fetch(_config2.default.SITE + '/location/locations/' + ownerId).then(function (result) {
         return result.json();
       }).then(function (locations) {
-        return _this4.locations = locations;
+        _this4.locations = locations;
+        console.log("loadLocationsFromServer", _this4.locations.length);
       });
     }
   }, {

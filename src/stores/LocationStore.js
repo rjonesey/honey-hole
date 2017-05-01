@@ -65,10 +65,9 @@ export default class LocationStore {
   }
 
   deleteLocation(locationId) {
-    console.log(locationId);
     let newList = this.locations.filter(l => l._id !== locationId);
     this.locations = newList;
-    fetch('/location/locations/' + locationId, {
+    fetch(config.SITE + '/location/locations/' + locationId, {
       method: 'DELETE'
     });
   }
@@ -103,8 +102,10 @@ export default class LocationStore {
 
   loadLocationsFromServer(ownerId) {
     fetch(config.SITE + '/location/locations/' + ownerId)
-       .then(result => result.json())
-       .then(locations => this.locations = locations);
+      .then(result => result.json())
+      .then(locations => {
+        this.locations = locations;
+      });
   }
 
   honeyHoleClick(){
