@@ -27248,8 +27248,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var config = {
-  SITE: "https://honeyhole.herokuapp.com"
-  // SITE: ""
+  // SITE: "https://honeyhole.herokuapp.com"
+  SITE: ""
 
 };
 
