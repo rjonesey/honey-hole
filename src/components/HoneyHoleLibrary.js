@@ -37,7 +37,7 @@ class HoneyHoleLibrary extends React.Component{
       this.props.locationStore.deleteLocation(location._id);
     } else {
       return null;
-    }    
+    }
   }
 
 
@@ -54,7 +54,7 @@ class HoneyHoleLibrary extends React.Component{
     });
     let locations = this.props.locationStore.locations.map((location, index) =>
       (
-        <div key={index} style={{display:'flex', flexDirection:'row'}}>
+        <div key={index} className="libraryBox">
           <ListGroupItem  onClick={this.handleHoneyDetails.bind(null, location)} href="">
           {dateFormat(location.date, "mm/dd/yy")} - <strong>{location.title}</strong>
           </ListGroupItem>

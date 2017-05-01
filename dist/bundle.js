@@ -27249,7 +27249,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var config = {
   SITE: "https://honeyhole.herokuapp.com"
-  //SITE: ""
+  // SITE: ""
 
 };
 
@@ -32214,7 +32214,7 @@ var HoneyHoleLibrary = function (_React$Component) {
       var locations = this.props.locationStore.locations.map(function (location, index) {
         return _react2.default.createElement(
           'div',
-          { key: index, style: { display: 'flex', flexDirection: 'row' } },
+          { key: index, className: 'libraryBox' },
           _react2.default.createElement(
             _reactBootstrap.ListGroupItem,
             { onClick: _this2.handleHoneyDetails.bind(null, location), href: '' },
@@ -43160,10 +43160,10 @@ var EntryPage = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'entry-page' },
+        null,
         _react2.default.createElement(
           'div',
-          { style: { width: "100vw", position: "relative", display: 'flex', flexWrap: 'nowrap', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-around', background: "#90afc5" } },
+          { className: 'entry-page' },
           _react2.default.createElement(
             'span',
             null,
