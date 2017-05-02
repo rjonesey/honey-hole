@@ -24163,6 +24163,10 @@ var _HoneyHoleLibrary = __webpack_require__(202);
 
 var _HoneyHoleLibrary2 = _interopRequireDefault(_HoneyHoleLibrary);
 
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -24300,9 +24304,9 @@ var HoneyHole = function (_React$Component) {
 }(_react2.default.Component);
 
 HoneyHole.propTypes = {
-  locationStore: _react2.default.PropTypes.object,
-  location: _react2.default.PropTypes.object,
-  backButton: _react2.default.PropTypes.boolean
+  locationStore: _propTypes2.default.object,
+  location: _propTypes2.default.object,
+  backButton: _propTypes2.default.boolean
 };
 
 exports.default = (0, _mobxReact.inject)('locationStore')((0, _mobxReact.observer)(HoneyHole));
@@ -24318,8 +24322,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var config = {
-  SITE: "https://honeyhole.herokuapp.com"
-  // SITE: ""
+  // SITE: "https://honeyhole.herokuapp.com"
+  SITE: ""
 
 };
 
@@ -32147,6 +32151,10 @@ var _HoneyHole = __webpack_require__(126);
 
 var _HoneyHole2 = _interopRequireDefault(_HoneyHole);
 
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -32310,7 +32318,7 @@ var HoneyHoleLibrary = function (_React$Component) {
 }(_react2.default.Component);
 
 HoneyHoleLibrary.propTypes = {
-  locationStore: _react2.default.PropTypes.object
+  locationStore: _propTypes2.default.object
 };
 
 exports.default = (0, _mobxReact.inject)('locationStore')((0, _mobxReact.observer)(HoneyHoleLibrary));
@@ -32333,6 +32341,10 @@ var _react = __webpack_require__(0);
 var _react2 = _interopRequireDefault(_react);
 
 var _mobxReact = __webpack_require__(30);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32423,7 +32435,7 @@ var Login = function (_React$Component) {
 }(_react2.default.Component);
 
 Login.propTypes = {
-  userStore: _react2.default.PropTypes.object
+  userStore: _propTypes2.default.object
 };
 exports.default = (0, _mobxReact.inject)('userStore')((0, _mobxReact.observer)(Login));
 
@@ -32447,6 +32459,10 @@ var _react2 = _interopRequireDefault(_react);
 var _reactRouter = __webpack_require__(47);
 
 var _mobxReact = __webpack_require__(30);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32485,9 +32501,9 @@ var Navigation = function (_React$Component) {
 }(_react2.default.Component);
 
 Navigation.propTypes = {
-  userStore: _react2.default.PropTypes.object,
-  logUserOut: _react2.default.PropTypes.func,
-  locationStore: _react2.default.PropTypes.object
+  userStore: _propTypes2.default.object,
+  logUserOut: _propTypes2.default.func,
+  locationStore: _propTypes2.default.object
 };
 
 exports.default = (0, _mobxReact.inject)('userStore', 'locationStore')((0, _mobxReact.observer)(Navigation));
@@ -32514,6 +32530,10 @@ var _mobxReact = __webpack_require__(30);
 var _config = __webpack_require__(127);
 
 var _config2 = _interopRequireDefault(_config);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32690,7 +32710,7 @@ var SignUp = function (_React$Component) {
 }(_react2.default.Component);
 
 SignUp.propTypes = {
-  userStore: _react2.default.PropTypes.object
+  userStore: _propTypes2.default.object
 };
 
 exports.default = (0, _mobxReact.inject)('userStore')((0, _mobxReact.observer)(SignUp));
@@ -43010,6 +43030,10 @@ var _Navigation = __webpack_require__(204);
 
 var _Navigation2 = _interopRequireDefault(_Navigation);
 
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -43043,7 +43067,7 @@ var App = function (_React$Component) {
 }(_react2.default.Component);
 
 App.propTypes = {
-  children: _react2.default.PropTypes.object
+  children: _propTypes2.default.object
 };
 
 exports.default = App;
@@ -43068,6 +43092,10 @@ var _react2 = _interopRequireDefault(_react);
 var _reactRouter = __webpack_require__(47);
 
 var _mobxReact = __webpack_require__(30);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -43109,8 +43137,8 @@ var EnsureLoggedInContainer = function (_React$Component) {
 }(_react2.default.Component);
 
 EnsureLoggedInContainer.propTypes = {
-  userStore: _react2.default.PropTypes.object,
-  children: _react2.default.PropTypes.object
+  userStore: _propTypes2.default.object,
+  children: _propTypes2.default.object
 };
 
 exports.default = (0, _mobxReact.inject)('userStore')((0, _mobxReact.observer)(EnsureLoggedInContainer));
@@ -43239,6 +43267,10 @@ var _HoneyHole = __webpack_require__(126);
 
 var _HoneyHole2 = _interopRequireDefault(_HoneyHole);
 
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -43358,7 +43390,7 @@ var Form = function (_React$Component) {
 }(_react2.default.Component);
 
 Form.propTypes = {
-  locationStore: _react2.default.PropTypes.object
+  locationStore: _propTypes2.default.object
 };
 
 exports.default = (0, _mobxReact.inject)('locationStore')((0, _mobxReact.observer)(Form));
@@ -43393,6 +43425,10 @@ var _SimpleMap2 = _interopRequireDefault(_SimpleMap);
 var _SimpleExample = __webpack_require__(338);
 
 var _SimpleExample2 = _interopRequireDefault(_SimpleExample);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -43448,8 +43484,8 @@ var Home = function (_React$Component) {
 }(_react2.default.Component);
 
 Home.propTypes = {
-  userStore: _react2.default.PropTypes.object,
-  locationStore: _react2.default.PropTypes.object
+  userStore: _propTypes2.default.object,
+  locationStore: _propTypes2.default.object
 };
 
 exports.default = (0, _mobxReact.inject)('userStore', 'locationStore')((0, _mobxReact.observer)(Home));
@@ -43478,6 +43514,10 @@ var _mobxReact = __webpack_require__(30);
 var _reactRouter = __webpack_require__(47);
 
 var _reactBootstrap = __webpack_require__(52);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -43570,7 +43610,7 @@ var SimpleExample = function (_React$Component) {
           _react2.default.createElement(_reactLeaflet.ScaleControl, { position: 'bottomright' }),
           _react2.default.createElement(_reactLeaflet.TileLayer, {
             attribution: '\xA9 <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-            url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+            url: 'https://{s}.tile.osm.org/{z}/{x}/{y}.png'
           }),
           marker
         ),
@@ -43583,8 +43623,8 @@ var SimpleExample = function (_React$Component) {
 }(_react2.default.Component);
 
 SimpleExample.propTypes = {
-  locationStore: _react2.default.PropTypes.object,
-  userStore: _react2.default.PropTypes.object
+  locationStore: _propTypes2.default.object,
+  userStore: _propTypes2.default.object
 };
 
 exports.default = (0, _mobxReact.inject)('locationStore', 'userStore')((0, _mobxReact.observer)(SimpleExample));
@@ -43611,6 +43651,10 @@ var _googleMapReact = __webpack_require__(433);
 var _googleMapReact2 = _interopRequireDefault(_googleMapReact);
 
 var _mobxReact = __webpack_require__(30);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -43718,8 +43762,8 @@ var SimpleMap = function (_React$Component) {
 }(_react2.default.Component);
 
 SimpleMap.propTypes = {
-  locationStore: _react2.default.PropTypes.object,
-  text: _react2.default.PropTypes.string
+  locationStore: _propTypes2.default.object,
+  text: _propTypes2.default.string
 };
 
 exports.default = (0, _mobxReact.inject)('locationStore')((0, _mobxReact.observer)(SimpleMap));
