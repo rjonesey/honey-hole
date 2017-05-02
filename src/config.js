@@ -1,6 +1,6 @@
 const config = {
-  SITE: "https://honeyhole.herokuapp.com"
-  // SITE: ""
+  // SITE: "https://honeyhole.herokuapp.com"
+  SITE: ""
 
 };
 
