@@ -44,10 +44,6 @@ var _location3 = require('../routes/location');
 
 var _location4 = _interopRequireDefault(_location3);
 
-var _goal3 = require('../routes/goal');
-
-var _goal4 = _interopRequireDefault(_goal3);
-
 var _jsonwebtoken = require('jsonwebtoken');
 
 var _jsonwebtoken2 = _interopRequireDefault(_jsonwebtoken);
@@ -177,7 +173,6 @@ app.get('/', function (req, res) {
 });
 
 app.use('/location', _location4.default);
-app.use('/goal', _goal4.default);
 
 app.use('/api', apiRoutes);
 

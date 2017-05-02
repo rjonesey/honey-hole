@@ -11,14 +11,12 @@ import Form from './components/Form';
 import { Provider } from 'mobx-react';
 import UserStore from './stores/UserStore';
 import LocationStore from './stores/LocationStore';
-import GoalStore from './stores/GoalStore';
 import EnsureLoggedInContainer from './components/EnsureLoggedInContainer';
 import EntryPage from './components/EntryPage';
 import HoneyHole from './components/HoneyHole';
 import HoneyHoleLibrary from './components/HoneyHoleLibrary';
 const locationStore = new LocationStore();
 const userStore = new UserStore();
-const goalStore = new GoalStore();
 
 export default function indexroute(){
   return(

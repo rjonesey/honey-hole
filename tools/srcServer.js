@@ -9,7 +9,6 @@ import User from '../models/user';
 import Location from '../models/location';
 import Goal from '../models/goal';
 import locationRoutes from '../routes/location';
-import goalRoutes from '../routes/goal';
 import jwt from 'jsonwebtoken';
 import authConfig from './authConfig';
 import morgan from 'morgan';
@@ -125,7 +124,6 @@ app.get('/', function(req, res) {
 });
 
 app.use('/location', locationRoutes);
-app.use('/goal', goalRoutes);
 
 app.use('/api', apiRoutes);
 

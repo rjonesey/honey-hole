@@ -36,7 +36,6 @@ class SimpleMap extends React.Component {
         let lat = position.coords.latitude;
         let lon = position.coords.longitude;
 
-        console.log(lat, lon);
         this.setState({center: {lat: lat, lng: lon}});
         this.props.locationStore.center.lat = lat;
         this.props.locationStore.center.lng = lon;
@@ -78,7 +77,8 @@ class SimpleMap extends React.Component {
 }
 
 SimpleMap.propTypes = {
-  locationStore: React.PropTypes.object
+  locationStore: React.PropTypes.object,
+  text: React.PropTypes.string
 };
 
 export default inject('locationStore')(observer(SimpleMap));

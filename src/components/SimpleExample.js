@@ -29,7 +29,6 @@ class SimpleExample extends React.Component {
         let lat = position.coords.latitude;
         let lon = position.coords.longitude;
 
-        console.log(lat, lon);
         this.setState({lat: lat, lng: lon, currentLocation: true});
         this.props.locationStore.center.lat = lat;
         this.props.locationStore.center.lng = lon;
@@ -70,7 +69,7 @@ class SimpleExample extends React.Component {
           <ScaleControl position="bottomright" />
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+            url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
           />
           {marker}
         </Map>

@@ -22,13 +22,11 @@ class Form extends React.Component {
 
   handleTitleChange(e) {
     this.setState({title: e.target.value});
-    console.log(this.state.title);
   }
 
 
   handleNotesChange(e) {
     this.setState({notes: e.target.value});
-    console.log(this.state.notes);
   }
 
   handleSaveFieldNotes(){
