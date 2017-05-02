@@ -4,6 +4,7 @@ import { inject, observer } from 'mobx-react';
 import { LinkContainer } from 'react-router-bootstrap';
 import SimpleMap from './SimpleMap';
 import SimpleExample from './SimpleExample';
+import PropTypes from 'prop-types';
 
 class Home extends React.Component{
   constructor(){
@@ -31,8 +32,8 @@ class Home extends React.Component{
   }
 }
 Home.propTypes={
-  userStore: React.PropTypes.object,
-  locationStore: React.PropTypes.object
+  userStore: PropTypes.object,
+  locationStore: PropTypes.object
 };
 
 export default inject('userStore', 'locationStore')(observer(Home));

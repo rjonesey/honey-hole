@@ -6,6 +6,7 @@ import { Map, Marker, Popup, TileLayer, ScaleControl } from 'react-leaflet';
 import { latLngBounds } from 'leaflet';
 import dateFormat from 'dateformat';
 import HoneyHole from './HoneyHole';
+import PropTypes from 'prop-types';
 
 
 class HoneyHoleLibrary extends React.Component{
@@ -108,7 +109,7 @@ class HoneyHoleLibrary extends React.Component{
 }
 
 HoneyHoleLibrary.propTypes = {
-  locationStore: React.PropTypes.object
+  locationStore: PropTypes.object
 };
 
 export default inject('locationStore')(observer(HoneyHoleLibrary));

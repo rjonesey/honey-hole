@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMap from 'google-map-react';
 import { inject, observer } from 'mobx-react';
+import PropTypes from 'prop-types';
 
 const AnyReactComponent = ({ text }) => (
   <div style={{
@@ -77,8 +78,8 @@ class SimpleMap extends React.Component {
 }
 
 SimpleMap.propTypes = {
-  locationStore: React.PropTypes.object,
-  text: React.PropTypes.string
+  locationStore: PropTypes.object,
+  text: PropTypes.string
 };
 
 export default inject('locationStore')(observer(SimpleMap));

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { observer, inject } from 'mobx-react';
+import PropTypes from 'prop-types';
 
 class Navigation extends React.Component {
   constructor(props) {
@@ -20,9 +21,9 @@ class Navigation extends React.Component {
   }
 }
 Navigation.propTypes = {
-  userStore: React.PropTypes.object,
-  logUserOut: React.PropTypes.func,
-  locationStore: React.PropTypes.object
+  userStore: PropTypes.object,
+  logUserOut: PropTypes.func,
+  locationStore: PropTypes.object
 };
 
 export default inject('userStore', 'locationStore')(observer(Navigation));

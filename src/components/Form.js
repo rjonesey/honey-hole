@@ -3,7 +3,8 @@ import { inject, observer } from 'mobx-react';
 import { FormControl, ControlLabel, FormGroup, Button, Col } from 'react-bootstrap';
 import dateFormat from 'dateformat';
 import { browserHistory } from 'react-router';
-import HoneyHole from './HoneyHole';
+import HoneyHole from './HoneyHole'
+import PropTypes from 'prop-types';
 
 class Form extends React.Component {
   constructor(){
@@ -80,7 +81,7 @@ class Form extends React.Component {
 }
 
 Form.propTypes = {
-  locationStore: React.PropTypes.object
+  locationStore: PropTypes.object
 };
 
 export default inject('locationStore')(observer(Form));

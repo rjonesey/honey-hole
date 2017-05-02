@@ -1,5 +1,6 @@
 import React from 'react';
 import Navigation from './Navigation';
+import PropTypes from 'prop-types';
 
 class App extends React.Component{
   constructor() {
@@ -17,7 +18,7 @@ class App extends React.Component{
 }
 
 App.propTypes = {
-  children: React.PropTypes.object
+  children: PropTypes.object
 };
 
 export default App;

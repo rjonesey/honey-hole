@@ -1,6 +1,7 @@
 import React from 'react';
 import { observer, inject } from 'mobx-react';
 import config from '../config';
+import PropTypes from 'prop-types';
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -137,7 +138,7 @@ class SignUp extends React.Component {
 
 
 SignUp.propTypes = {
-  userStore: React.PropTypes.object
+  userStore: PropTypes.object
 };
 
 export default inject('userStore')(observer(SignUp));

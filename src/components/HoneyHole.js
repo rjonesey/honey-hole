@@ -5,6 +5,7 @@ import { Map, Marker, Popup, TileLayer, ScaleControl } from 'react-leaflet';
 import dateFormat from 'dateformat';
 import { browserHistory } from 'react-router';
 import handleDelete from './HoneyHoleLibrary';
+import PropTypes from 'prop-types';
 
 class HoneyHole extends React.Component{
   constructor(){
@@ -65,9 +66,9 @@ class HoneyHole extends React.Component{
 }
 
 HoneyHole.propTypes = {
-  locationStore: React.PropTypes.object,
-  location: React.PropTypes.object,
-  backButton: React.PropTypes.boolean,
+  locationStore: PropTypes.object,
+  location: PropTypes.object,
+  backButton: PropTypes.boolean,
 };
 
 export default inject('locationStore')(observer(HoneyHole));

@@ -1,6 +1,7 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
 import { observer, inject } from 'mobx-react';
+import PropTypes from 'prop-types';
 
 class EnsureLoggedInContainer extends React.Component {
   componentDidMount() {
@@ -20,8 +21,8 @@ class EnsureLoggedInContainer extends React.Component {
 }
 
 EnsureLoggedInContainer.propTypes = {
-  userStore: React.PropTypes.object,
-  children: React.PropTypes.object
+  userStore: PropTypes.object,
+  children: PropTypes.object
 };
 
 export default inject('userStore')(observer(EnsureLoggedInContainer));

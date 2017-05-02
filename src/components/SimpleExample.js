@@ -3,6 +3,7 @@ import { Map, Marker, Popup, TileLayer, ScaleControl } from 'react-leaflet';
 import { inject, observer } from 'mobx-react';
 import { browserHistory } from 'react-router';
 import { Button } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 class SimpleExample extends React.Component {
   constructor() {
@@ -81,8 +82,8 @@ class SimpleExample extends React.Component {
 }
 
 SimpleExample.propTypes = {
-  locationStore: React.PropTypes.object,
-  userStore: React.PropTypes.object
+  locationStore: PropTypes.object,
+  userStore: PropTypes.object
 };
 
 export default inject('locationStore', 'userStore')(observer(SimpleExample));

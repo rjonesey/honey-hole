@@ -1,5 +1,6 @@
 import React from 'react';
 import { observer, inject } from 'mobx-react';
+import PropTypes from 'prop-types';
 
 class Login extends React.Component {
   constructor() {
@@ -49,6 +50,6 @@ class Login extends React.Component {
   }
 }
 Login.propTypes = {
-  userStore: React.PropTypes.object
+  userStore: PropTypes.object
 };
 export default inject('userStore')(observer(Login));
