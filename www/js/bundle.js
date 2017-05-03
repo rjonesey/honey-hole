@@ -43029,7 +43029,7 @@ var SimpleExample = function (_React$Component) {
           _react2.default.createElement(_reactLeaflet.ScaleControl, { position: 'bottomright' }),
           _react2.default.createElement(_reactLeaflet.TileLayer, {
             attribution: '\xA9 <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-            url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+            url: 'https://{s}.tile.osm.org/{z}/{x}/{y}.png'
           }),
           marker
         ),
