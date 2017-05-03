@@ -43265,7 +43265,7 @@ var LocationStore = function () {
     value: function getWeatherInfo() {
       var _this2 = this;
 
-      fetch('http://api.openweathermap.org/data/2.5/weather?lat=' + this.center.lat + '&lon=' + this.center.lng + '&APPID=564418e3a4d2e53c5f17a857b7eb2ca5').then(function (result) {
+      fetch('https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=' + this.center.lat + '&lon=' + this.center.lng + '&APPID=564418e3a4d2e53c5f17a857b7eb2ca5').then(function (result) {
         return result.json();
       }).then(function (data) {
         return _this2.weather = { conditions: data.weather[0].description, temp: data.main.temp, windSpeed: data.wind.speed, windDir: data.wind.deg };
