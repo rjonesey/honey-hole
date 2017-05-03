@@ -2,7 +2,6 @@ import React from 'react';
 import { Col } from 'react-bootstrap';
 import { inject, observer } from 'mobx-react';
 import { LinkContainer } from 'react-router-bootstrap';
-import SimpleMap from './SimpleMap';
 import SimpleExample from './SimpleExample';
 import PropTypes from 'prop-types';
 
