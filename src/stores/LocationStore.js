@@ -75,7 +75,7 @@ export default class LocationStore {
 
 
   getWeatherInfo() {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${this.center.lat}&lon=${this.center.lng}&APPID=72c2e10afa58ce6e31b103d41b7125b8`)
+    fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${this.center.lat}&lon=${this.center.lng}&APPID=564418e3a4d2e53c5f17a857b7eb2ca5`)
        .then(result => result.json())
        .then(data => this.weather = {conditions: data.weather[0].description, temp: data.main.temp, windSpeed: data.wind.speed, windDir: data.wind.deg });
   }
