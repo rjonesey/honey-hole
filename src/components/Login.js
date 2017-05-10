@@ -17,6 +17,7 @@ class Login extends React.Component {
   handleEmailChange(e) {
     this.setState({email: e.target.value});
   }
+  
   handlePasswordChange(e) {
     this.setState({password: e.target.value});
   }
@@ -29,8 +30,10 @@ class Login extends React.Component {
     this.setState({email: "", password: ""});
 
   }
+
   render(){
     let invalidUser = <h3 className="invalidUser">Please enter valid username and password.</h3>;
+
     let loginForm = (
       <div >
         <form method="" role="form">
@@ -41,15 +44,18 @@ class Login extends React.Component {
           </div>
         </form>
         {this.props.userStore.failedLogin ? invalidUser : ""}
-    </div>);
+      </div>);
+
     return(
-        <div>
-          {loginForm}
-        </div>
+      <div>
+        {loginForm}
+      </div>
     );
   }
 }
+
 Login.propTypes = {
   userStore: PropTypes.object
 };
+
 export default inject('userStore')(observer(Login));
